@@ -42,3 +42,9 @@ class TestEncrypt(unittest.TestCase):
         test_data = "→⁷∴°"
 
         self.assertEqual(cipher.caesar_encrypt_text(test_data, 14), test_data)
+
+    def test_encrypt_control(self):
+        """Test encryption for control characters."""
+        test_data = "\x16\x1E\x7F"
+
+        self.assertEqual(cipher.caesar_encrypt_text(test_data, 15), test_data)
