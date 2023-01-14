@@ -59,3 +59,19 @@ def caesar_encrypt_text(text: str, shift: int) -> str:
             result += char
 
     return result
+
+def caesar_decrypt_text(text: str) -> list[str]:
+    """Decrypts the given Caesar ciphertext with brute force.
+
+    Args:
+        text (str): The text to decrypt.
+
+    Returns:
+        list[str]: A list of all possible plaintexts from the given cipher.
+    """
+    result = []
+
+    for i in range(1, ALPHABET_LENGTH):
+        result.append(caesar_encrypt_text(text, i))
+
+    return result

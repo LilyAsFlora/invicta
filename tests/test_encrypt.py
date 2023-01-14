@@ -4,7 +4,7 @@ import unittest
 
 import cipher
 
-class TestCipher(unittest.TestCase):
+class TestEncrypt(unittest.TestCase):
     def test_encrypt_char_pos(self):
         """Positive single character encryption."""
         self.assertEqual(cipher.caesar_encrypt_char("a", 1), "b")
