@@ -5,6 +5,11 @@ import string
 ZERO_SHIFT = 65
 ALPHABET_LENGTH = 26
 
+def can_caesar_encrypt(text: str) -> bool:
+    """Checks whether the given string can be modified with a Caesar cipher."""
+    return all([(char in string.ascii_letters) for char in text]) \
+        and text != ""
+
 def caesar_encrypt_char(char: str, shift: int) -> str:
     """
     Applies case-preserving Caesar cipher to the given character.
