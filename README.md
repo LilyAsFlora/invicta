@@ -42,7 +42,8 @@ invicta decrypt [-h] text
 `text` — The ciphertext to decrypt. Will output all possible solutions.
 
 #### Options
-  `-h, --help`  Show a help message and exit.
+  `-h, --help` — Show a help message and exit.
+  `-o, --output-shifts` — Shows the shift keys needed to get from each plaintext to the ciphertext.
 
 ## Encryption Examples
 
@@ -69,33 +70,35 @@ Jgnnq, yqtnf!
 
 ## Decryption Examples
 
-### Multi-word decryption:
+### Multi-word decryption with shift keys:
 ```
-$ invicta decrypt "Zwddg, ogjdv!"
-Axeeh, phkew!
-Byffi, qilfx!
-Czggj, rjmgy!
-Dahhk, sknhz!
-Ebiil, tloia!
-Fcjjm, umpjb!
-Gdkkn, vnqkc!
-Hello, world! ← This one works!
-Ifmmp, xpsme!
-Jgnnq, yqtnf!
-Khoor, zruog!
-Lipps, asvph!
-Mjqqt, btwqi!
-Nkrru, cuxrj!
-Olssv, dvysk!
-Pmttw, ewztl!
-Qnuux, fxaum!
-Rovvy, gybvn!
-Spwwz, hzcwo!
-Tqxxa, iadxp!
-Uryyb, jbeyq!
-Vszzc, kcfzr!
-Wtaad, ldgas!
-Xubbe, mehbt!
-Yvccf, nficu!
+$ invicta decrypt --output-shifts "Zwddg, ogjdv!"
+25 Axeeh, phkew!
+24 Byffi, qilfx!
+23 Czggj, rjmgy!
+22 Dahhk, sknhz!
+21 Ebiil, tloia!
+20 Fcjjm, umpjb!
+19 Gdkkn, vnqkc!
+18 Hello, world! ← This one works!
+17 Ifmmp, xpsme!
+16 Jgnnq, yqtnf!
+15 Khoor, zruog!
+14 Lipps, asvph!
+13 Mjqqt, btwqi!
+12 Nkrru, cuxrj!
+11 Olssv, dvysk!
+10 Pmttw, ewztl!
+9 Qnuux, fxaum!
+8 Rovvy, gybvn!
+7 Spwwz, hzcwo!
+6 Tqxxa, iadxp!
+5 Uryyb, jbeyq!
+4 Vszzc, kcfzr!
+3 Wtaad, ldgas!
+2 Xubbe, mehbt!
+1 Yvccf, nficu!
 ```
+
+From thesee results, we can conclude the string "Hello, world!" was shifted by 18 characters to produce "Zwddg, ogjdv!".
 
