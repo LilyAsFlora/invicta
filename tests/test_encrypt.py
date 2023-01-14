@@ -21,7 +21,7 @@ class TestEncrypt(unittest.TestCase):
         """Positive text encryption."""
         self.assertEqual(cipher.caesar_encrypt_text("abc", 1), "bcd")
 
-    def test_encrypt_test_neg(self):
+    def test_encrypt_text_neg(self):
         """Negative text encryption."""
         self.assertEqual(cipher.caesar_encrypt_text("abc", -1), "zab")
 
