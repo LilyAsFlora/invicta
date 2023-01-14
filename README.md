@@ -9,7 +9,7 @@ A simple command line script for [Caesar cipher](https://en.wikipedia.org/wiki/C
 
 ## Usage
 ```
-main.py [-h] [-v] {encrypt,decrypt} ...
+invicta [-h] [-v] {encrypt,decrypt} ...
 ```
 
 #### Global Options
@@ -19,7 +19,7 @@ main.py [-h] [-v] {encrypt,decrypt} ...
 
 ### Encryption
 ```
-main.py encrypt [-h] shift text
+invicta encrypt [-h] shift text
 ```
 
 #### Positional Arguments
@@ -36,7 +36,7 @@ main.py encrypt [-h] shift text
 Here, decryption is done with a brute-force approach, leaving it up to the user to interpret the results.
 
 ```
-main.py decrypt [-h] text
+invicta decrypt [-h] text
 ```
 #### Positional Arguments
 `text` — The ciphertext to decrypt. Will output all possible solutions.
