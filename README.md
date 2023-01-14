@@ -36,7 +36,7 @@ invicta encrypt [-h] shift text
 Here, decryption is done with a brute-force approach, leaving it up to the user to interpret the results.
 
 ```
-invicta decrypt [-h] text
+invicta decrypt [-h] [-o] text
 ```
 #### Positional Arguments
 `text` — The ciphertext to decrypt. Will output all possible solutions.
