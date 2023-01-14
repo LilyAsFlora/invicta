@@ -39,6 +39,11 @@ def process_args() -> argparse.Namespace:
     )
 
     decrypt.add_argument(
+        "--output-shifts", "-o", type="store_true",
+        help="Append shifts required to get from plaintext to the ciphertext."
+    )
+
+    decrypt.add_argument(
         "text", type=str,
         help="The ciphertext to decrypt. Will output all possible solutions."
     )
