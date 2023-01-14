@@ -10,7 +10,7 @@ def process_args() -> argparse.Namespace:
         description="Encrypt text with the Caesar cipher."
     )
 
-    parser.set_defaults(func=lambda x: parser.print_usage())
+    parser.set_defaults(func=lambda: parser.print_usage())
 
     subparsers = parser.add_subparsers(help="Action options.")
 
