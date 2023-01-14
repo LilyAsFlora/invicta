@@ -32,3 +32,7 @@ class TestEncrypt(unittest.TestCase):
     def test_encrypt_text_round(self):
         """Test shift rounding."""
         self.assertEqual(cipher.caesar_encrypt_text("a", 1.2), "b")
+
+    def test_encrypt_empty(self):
+        """Test encryption for an empty string."""
+        self.assertEqual(cipher.caesar_encrypt_text("", 17), "")
