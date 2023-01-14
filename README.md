@@ -46,5 +46,5 @@ Fcjjm, umpjb!
 ```
 $ invicta 28 "Hello, world!"
 Jgnnq, yqtnf!
-```usage: invicta [-h] [-v] shift text
+```
 
