@@ -2,6 +2,7 @@
 
 import argparse
 
+import output
 import _version
 
 def process_args() -> argparse.Namespace:
@@ -9,10 +10,15 @@ def process_args() -> argparse.Namespace:
         description="Encrypt text with the Caesar cipher."
     )
 
-    subparsers = parser.add_subparsers(help="Sub-command help")
+    parser.set_defaults(func=lambda x: parser.print_usage())
+
+    subparsers = parser.add_subparsers(help="Action options.")
 
     encrypt = subparsers.add_parser("encrypt", help="Caesar encryption.")
     decrypt = subparsers.add_parser("decrypt", help="Caesar decryption.")
+
+    encrypt.set_defaults(func=output.output_encryption)
+    decrypt.set_defaults(func=output.output_decryption)
 
     parser.add_argument(
         "-v", "--version", action="version", 
