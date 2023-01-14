@@ -43,6 +43,7 @@ invicta decrypt [-h] [-o] text
 
 #### Options
   `-h, --help` — Show a help message and exit.
+  
   `-o, --output-shifts` — Shows the shift keys needed to get from each plaintext to the ciphertext.
 
 ## Encryption Examples
