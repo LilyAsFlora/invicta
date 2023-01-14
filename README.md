@@ -1,7 +1,7 @@
 
 # Invicta
 
-A simple command line script for [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encryption and decryption.
+A fun little command line utility for [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encryption and decryption.
 
 ## Requirements
 
