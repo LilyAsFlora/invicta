@@ -36,3 +36,9 @@ class TestEncrypt(unittest.TestCase):
     def test_encrypt_empty(self):
         """Test encryption for an empty string."""
         self.assertEqual(cipher.caesar_encrypt_text("", 17), "")
+
+    def test_encrypt_non_ascii(self):
+        """Test encryption for non-ASCII characters."""
+        test_data = "→⁷∴°"
+
+        self.assertEqual(cipher.caesar_encrypt_text(test_data, 14), test_data)
