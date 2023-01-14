@@ -13,6 +13,9 @@ def output_decryption(args: argparse.Namespace) -> None:
     """Handles decryption output for the given arguments."""
     result = cipher.caesar_decrypt_text(args.text)
 
+    if args.text == "":
+        return
+
     if args.output_shifts:
         for index, string in enumerate(result, 1):
             print(f"{cipher.ALPHABET_LENGTH - index} {-index} {string}")
