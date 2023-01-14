@@ -15,7 +15,7 @@ def output_decryption(args: argparse.Namespace) -> None:
 
     if args.output_shifts:
         for index, string in enumerate(result, 1):
-            print(f"{cipher.ALPHABET_LENGTH - index} {string}")
+            print(f"{cipher.ALPHABET_LENGTH - index} {-index} {string}")
     else:
         for string in result:
             print(string)
