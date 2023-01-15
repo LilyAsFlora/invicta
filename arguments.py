@@ -2,8 +2,17 @@
 
 import argparse
 
+import cipher
 import output
 import _version
+
+def cipherable(text: str) -> str:
+    if not cipher.can_caesar_encrypt(text):
+        raise argparse.ArgumentTypeError(
+            f"String '{text}' cannot have been encrypted with Caesar cipher."
+        )
+
+    return text
 
 def process_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -44,7 +53,7 @@ def process_args() -> argparse.Namespace:
     )
 
     decrypt.add_argument(
-        "text", type=str,
+        "text", type=cipherable,
         help="The ciphertext to decrypt. Will output all possible solutions."
     )
 
