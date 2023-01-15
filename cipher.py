@@ -2,6 +2,8 @@
 
 import string
 
+import exceptions
+
 ZERO_SHIFT = 65
 ALPHABET_LENGTH = 26
 
@@ -74,6 +76,11 @@ def caesar_decrypt_text(text: str) -> list[str]:
     Returns:
         list[str]: A list of all possible plaintexts from the given cipher.
     """
+    if not can_caesar_encrypt(text):
+        raise exceptions.CannotCaesarEncryptException(
+            f"String '{text}' could not have been encrypted with Caesar cipher."
+        )
+
     result = []
 
     for i in range(1, ALPHABET_LENGTH):
