@@ -2,8 +2,6 @@
 
 import string
 
-import exceptions
-
 ZERO_SHIFT = 65
 ALPHABET_LENGTH = 26
 
