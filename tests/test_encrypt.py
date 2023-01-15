@@ -4,47 +4,73 @@ import unittest
 
 import cipher
 
-class TestEncrypt(unittest.TestCase):
-    def test_encrypt_char_pos(self):
-        """Positive single character encryption."""
-        self.assertEqual(cipher.caesar_encrypt_char("a", 1), "b")
+class TestCaesarEncrypt(unittest.TestCase):
+    def test_caesar_encrypt_positive_char(self):
+        char = "a"
+        positive_shift = 1
 
-    def test_encrypt_char_neg(self):
-        """Negative single character encryption."""
-        self.assertEqual(cipher.caesar_encrypt_char("a", -1), "z")
+        result = cipher.caesar_encrypt_char(char, positive_shift)
 
-    def test_encrypt_char_upper(self):
-        """Uppercase character encryption."""
-        self.assertEqual(cipher.caesar_encrypt_char("G", 3), "J")
+        self.assertEqual(result, "b")
 
-    def test_encrypt_text_pos(self):
-        """Positive text encryption."""
-        self.assertEqual(cipher.caesar_encrypt_text("abc", 1), "bcd")
+    def test_caesar_encrypt_negative_char(self):
+        char = "a"
+        negative_shift = -1
 
-    def test_encrypt_text_neg(self):
-        """Negative text encryption."""
-        self.assertEqual(cipher.caesar_encrypt_text("abc", -1), "zab")
+        result = cipher.caesar_encrypt_char(char, negative_shift)
+        
+        self.assertEqual(result, "z")
 
-    def test_encrypt_text_upper(self):
-        """Uppercase text encryption."""
-        self.assertEqual(cipher.caesar_encrypt_text("FOO", 4), "JSS")
+    def test_caesar_encrypt_char_upper_preserves_case(self):
+        upper_char = "A"
+        result = cipher.caesar_encrypt_char(upper_char, 1)
+        
+        self.assertEqual(result, "B")
 
-    def test_encrypt_text_round(self):
-        """Test shift rounding."""
-        self.assertEqual(cipher.caesar_encrypt_text("a", 1.2), "b")
+    def test_caesar_encrypt_positive_text(self):
+        string = "aa"
+        positive_shift = 1
 
-    def test_encrypt_empty(self):
-        """Test encryption for an empty string."""
-        self.assertEqual(cipher.caesar_encrypt_text("", 17), "")
+        result = cipher.caesar_encrypt_text(string, positive_shift)
 
-    def test_encrypt_non_ascii(self):
-        """Test encryption for non-ASCII characters."""
-        test_data = "→⁷∴°"
+        self.assertEqual(result, "bb")
 
-        self.assertEqual(cipher.caesar_encrypt_text(test_data, 14), test_data)
+    def test_caesar_encrypt_negative_text(self):
+        string = "aa"
+        negative_shift = -1
 
-    def test_encrypt_control(self):
-        """Test encryption for control characters."""
-        test_data = "\x16\x1E\x7F"
+        result = cipher.caesar_encrypt_text(string, negative_shift)
 
-        self.assertEqual(cipher.caesar_encrypt_text(test_data, 15), test_data)
+        self.assertEqual(result, "zz")
+
+    def test_caesar_encrypt_text_upper_preserves_case(self):
+        upper_string = "AA"
+        result = cipher.caesar_encrypt_text(upper_string, 1)
+
+        self.assertEqual(result, "BB")
+
+    def test_caesar_encrypt_fractional_shift_is_rounded(self):
+        string = "aa"
+        fractional_shift = 1.2
+
+        result = cipher.caesar_encrypt_text(string, fractional_shift)
+
+        self.assertEqual(result, "bb")
+
+    def test_caesar_encrypt_empty_string_returns_empty(self):
+        empty_str = ""
+        result = cipher.caesar_encrypt_text(empty_str, 1)
+
+        self.assertEqual(result, empty_str)
+
+    def test_caesar_encrypt_non_ascii_chars_preserved(self):
+        non_ascii_str = "→⁷∴°"
+        result = cipher.caesar_encrypt_text(non_ascii_str, 1)
+
+        self.assertEqual(result, non_ascii_str)
+
+    def test_caesar_encrypt_control_chars_preserved(self):
+        control_str = "\x16\x1E\x7F"
+        result = cipher.caesar_encrypt_text(control_str, 1)
+
+        self.assertEqual(result, control_str)
