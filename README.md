@@ -102,3 +102,27 @@ $ invicta decrypt --output-shifts "Zwddg, ogjdv!"
 ```
 
 From these results, we can conclude the string "Hello, world!" was shifted by either 18 or -8 characters to produce "Zwddg, ogjdv!".
+
+## Running Tests
+
+All unit tests are in `tests/`.
+
+To run **all tests**, run:
+
+`python -m unittest tests/*.py`
+
+To run a **single test**, run:
+
+`python -m unittest tests/<TEST>`
+
+Where `<TEST>` is the name of the target test file.
+
+### Example (as of v.0.4.0)
+```
+$ python -m unittest tests/*.py
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 0.001s
+
+OK
+```
