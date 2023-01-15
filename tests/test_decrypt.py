@@ -6,12 +6,14 @@ import cipher
 
 class TestDecrypt(unittest.TestCase):
     def test_caesar_decrypt_word_in_plaintexts(self):
-        encrypted = cipher.caesar_encrypt_text("foo", 16)
+        plaintext = "a"
+        encrypted = cipher.caesar_encrypt_text(plaintext, 1)
 
-        self.assertIn("foo", cipher.caesar_decrypt_text(encrypted))
+        self.assertIn(plaintext, cipher.caesar_decrypt_text(encrypted))
 
     def test_decrypt_words_in_plaintexts(self):
         """Test for multiple words."""
-        encrypted = cipher.caesar_encrypt_text("Hello, world!", 25)
+        plaintext = "a b"
+        encrypted = cipher.caesar_encrypt_text(plaintext, 1)
 
-        self.assertIn("Hello, world!", cipher.caesar_decrypt_text(encrypted))
+        self.assertIn(plaintext, cipher.caesar_decrypt_text(encrypted))
