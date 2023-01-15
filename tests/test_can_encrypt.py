@@ -5,6 +5,6 @@ import unittest
 import cipher
 
 class TestCanEncrypt(unittest.TestCase):
-    def test_can_encrypt_valid(self):
-        """Test for valid data."""
+    def test_can_encrypt_true(self):
+        """Test for valid encryptable data."""
         self.assertTrue(cipher.can_caesar_encrypt("Hello, world!"))
