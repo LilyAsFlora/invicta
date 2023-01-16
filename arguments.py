@@ -53,6 +53,11 @@ def process_args() -> argparse.Namespace:
     )
 
     decrypt.add_argument(
+        "-e" "--english", action="store_true",
+        help="Only output plaintexts containing English text."
+    )
+
+    decrypt.add_argument(
         "text", type=cipherable,
         help="The ciphertext to decrypt. Will output all possible solutions."
     )
