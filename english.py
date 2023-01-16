@@ -1,3 +1,5 @@
+"""This module contains functions for English checks in Invicta."""
+
 from spellchecker import SpellChecker
 
 def is_english_word(word: str, checker: SpellChecker) -> bool:
