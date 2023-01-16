@@ -15,3 +15,15 @@ class TestEnglish(unittest.TestCase):
         result = english.is_english_word(test_word, self.spell_checker)
 
         self.assertTrue(result)
+
+    def test_is_english_word_false_for_non_english(self):
+        test_word="q"
+        result = english.is_english_word(test_word, self.spell_checker)
+
+        self.assertFalse(result)
+
+    def test_is_english_word_false_for_empty(self):
+        empty_string = ""
+        result = english.is_english_word(empty_string, self.spell_checker)
+
+        self.assertFalse(result)
