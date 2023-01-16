@@ -27,3 +27,27 @@ class TestEnglish(unittest.TestCase):
         result = english.is_english_word(empty_string, self.spell_checker)
 
         self.assertFalse(result)
+
+    def test_contains_english_true_for_english(self):
+        test_word = "the"
+        result = english.contains_english(test_word, self.spell_checker)
+
+        self.assertTrue(result)
+
+    def test_contains_english_false_for_non_english(self):
+        test_word="q"
+        result = english.contains_english(test_word, self.spell_checker)
+
+        self.assertFalse(result)
+
+    def test_contains_english_false_for_empty(self):
+        empty_string = ""
+        result = english.contains_english(empty_string, self.spell_checker)
+
+        self.assertFalse(result)
+
+    def test_contains_english_true_for_mixed(self):
+        mixed_string = "q the"
+        result = english.contains_english(mixed_string, self.spell_checker)
+
+        self.assertTrue(result)
