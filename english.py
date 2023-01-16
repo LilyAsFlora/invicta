@@ -13,7 +13,7 @@ def is_english_word(word: str, checker: SpellChecker) -> bool:
         word: A string to test. This does not have to be pre-sanitised.
         checker: An instance of pyspellchecker.Spellchecker
     """
-    return word in checker.known([word])
+    return word.lower().strip() in checker.known([word.lower().strip()])
 
 def contains_english(string: str, checker: SpellChecker) -> bool:
     """Returns `True` if the given string contains a word that exists in the
