@@ -17,23 +17,23 @@ def output_decryption(args: argparse.Namespace) -> None:
     if not cipher.can_caesar_encrypt(args.text):
         return
 
-    result = cipher.caesar_decrypt_text(args.text)
+    ciphertext = cipher.caesar_decrypt_text(args.text)
 
     # -o, --output-shifts
     if args.output_shifts:
-        for index, string in enumerate(result, 1):
-            result[index - 1] = \
+        for index, string in enumerate(ciphertext, 1):
+            ciphertext[index - 1] = \
                 f"{cipher.ALPHABET_LENGTH - index} {-index} {string}"
 
     # -e, --english
     if args.english:
         spell_checker = spellchecker.SpellChecker()
 
-        result = [
-            string for string in result if english.contains_english(
+        ciphertext = [
+            string for string in ciphertext if english.contains_english(
                 string, spell_checker
             )
         ]
 
-    for string in result:
+    for string in ciphertext:
         print(string)
