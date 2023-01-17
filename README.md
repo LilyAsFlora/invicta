@@ -42,9 +42,11 @@ invicta decrypt [-h] [-o] text
 `text` — The ciphertext to decrypt. Will output all possible solutions.
 
 #### Options
-  `-h, --help` — Show a help message and exit.
-  
-  `-o, --output-shifts` — Shows the shift keys needed to get from each plaintext to the ciphertext. This shows both positive & negative keys (mod 26).
+`-h, --help` — Show a help message and exit.
+
+`-o, --output-shifts` — Shows the shift keys needed to get from each plaintext to the ciphertext. This shows both positive & negative keys (mod 26).
+
+`-e, --english` — Only output plaintexts containing English text.
 
 ## Encryption Examples
 
@@ -99,6 +101,13 @@ $ invicta decrypt --output-shifts "Zwddg, ogjdv!"
 3 -23 Wtaad, ldgas!
 2 -24 Xubbe, mehbt!
 1 -25 Yvccf, nficu!
+```
+
+### Multi-word decryption with keys, filtering for English:
+
+```
+$ invicta decrypt --english --output-shifts "Zwddg, ogjdv!"
+18 -8 Hello, world!
 ```
 
 From these results, we can conclude the string "Hello, world!" was shifted by either 18 or -8 characters to produce "Zwddg, ogjdv!".
