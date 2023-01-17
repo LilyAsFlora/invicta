@@ -27,10 +27,12 @@ def is_english_word(word: str, checker: SpellChecker) -> bool:
     several words, this will return `False`.
     
     Args:
-        word: A string to test. This does not have to be pre-sanitised.
+        word: A string to test. 
         checker: An instance of pyspellchecker.Spellchecker
     """
-    return word.lower().strip() in checker.known([word.lower().strip()])
+    sanitised_word = word.lower().strip()
+
+    return sanitised_word in checker.known([sanitised_word])
 
 def contains_english(string: str, checker: SpellChecker) -> bool:
     """Returns `True` if the given string contains a word that exists in the
