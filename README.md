@@ -126,12 +126,12 @@ To run a **single test**, run:
 
 Where `<TEST>` is the name of the target test file.
 
-### Example (as of v.0.4.0)
+### Example (as of v0.4.0)
 ```
 $ python -m unittest tests/*.py
-.................
+.............................
 ----------------------------------------------------------------------
-Ran 17 tests in 0.001s
+Ran 25 tests in 0.693s
 
 OK
 ```
