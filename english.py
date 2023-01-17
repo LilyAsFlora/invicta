@@ -1,6 +1,23 @@
 """This module contains functions for English checks in Invicta."""
 
+import string
+
 from spellchecker import SpellChecker
+
+def strip_to_ascii_letters(initial_string: str) -> str:
+    """Removes all non-ASCII-letter characters in a string.
+
+    More precisely, this function returns a new `str` stripped of any
+    characters that do not occur in `string.ascii_letters`. All whitespace
+    is preserved.
+    """
+    result = ""
+
+    for char in initial_string:
+        if (char in string.ascii_letters) or (char.isspace()):
+            result += char
+
+    return result
 
 def is_english_word(word: str, checker: SpellChecker) -> bool:
     """Returns `True` if the given word exists in the English dictionary.
