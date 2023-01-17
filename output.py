@@ -14,10 +14,10 @@ def output_encryption(args: argparse.Namespace) -> None:
 
 def output_decryption(args: argparse.Namespace) -> None:
     """Handles decryption output for the given arguments."""
-    result = cipher.caesar_decrypt_text(args.text)
-
     if not cipher.can_caesar_encrypt(args.text):
         return
+
+    result = cipher.caesar_decrypt_text(args.text)
 
     # -o, --output-shifts
     if args.output_shifts:
