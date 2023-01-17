@@ -43,7 +43,7 @@ invicta encrypt [-h] shift text
 
 ### Decryption
 
-Here, decryption is done with a brute-force approach, leaving it up to the user to interpret the results.
+Here, decryption is done with a brute-force approach. If the `--english` flag is not used, the user must interpret the results.
 
 ```
 invicta decrypt [-h] [-o] text
