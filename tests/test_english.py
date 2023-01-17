@@ -51,3 +51,9 @@ class TestEnglish(unittest.TestCase):
         result = english.contains_english(mixed_string, self.spell_checker)
 
         self.assertTrue(result)
+
+    def test_contains_english_true_for_mixed_non_letters(self):
+        mixed_string = "; the"
+        result = english.contains_english(mixed_string, self.spell_checker)
+
+        self.assertTrue(result)
