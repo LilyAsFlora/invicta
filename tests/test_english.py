@@ -10,6 +10,12 @@ class TestEnglish(unittest.TestCase):
     def setUp(self):
         self.spell_checker = spellchecker.SpellChecker()
 
+    def test_strip_to_ascii_letters_valid(self):
+        test_string = "A!"
+        result = english.strip_to_ascii_letters(test_string)
+
+        self.assertEqual(result, "A")
+
     def test_is_english_word_true_for_english(self):
         test_word = "the"
         result = english.is_english_word(test_word, self.spell_checker)
