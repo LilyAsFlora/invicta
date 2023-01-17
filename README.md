@@ -9,7 +9,7 @@ A fun little command line utility for [Caesar cipher](https://en.wikipedia.org/w
 
 ### Python Dependencies
 
-- [pyspellchecker v0.7.1+](https://pypi.org/project/pyspellchecker/)
+- [pyspellchecker 0.7.1+](https://pypi.org/project/pyspellchecker/)
 
 To automatically install these dependencies, run:
 
