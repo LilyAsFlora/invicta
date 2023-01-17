@@ -16,6 +16,12 @@ class TestEnglish(unittest.TestCase):
 
         self.assertEqual(result, "A")
 
+    def test_strip_to_ascii_letters_preserves_whitespace(self):
+        test_string = "a a!"
+        result = english.strip_to_ascii_letters(test_string)
+
+        self.assertEqual(result, "a a")
+
     def test_is_english_word_true_for_english(self):
         test_word = "the"
         result = english.is_english_word(test_word, self.spell_checker)
