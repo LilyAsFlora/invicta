@@ -44,6 +44,6 @@ def contains_english(string: str, checker: SpellChecker) -> bool:
         word: A string to test. This does not have to be pre-sanitised.
         checker: An instance of pyspellchecker.Spellchecker
     """
-    return any(
-        [is_english_word(word.strip(), checker) for word in string.split(" ")]
-    )
+    words = string.split(" ")
+
+    return any([is_english_word(word.strip()) for word in words])
