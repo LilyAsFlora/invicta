@@ -4,8 +4,7 @@ import argparse
 
 import spellchecker
 
-import cipher
-import english
+from . import cipher, english
 
 def output_encryption(args: argparse.Namespace) -> None:
     """Handles encryption output for the given arguments."""

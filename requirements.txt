@@ -1,2 +1,0 @@
-pyspellchecker==0.7.1
-spellchecker==0.4

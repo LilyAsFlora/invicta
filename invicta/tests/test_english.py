@@ -4,7 +4,7 @@ import unittest
 
 import spellchecker
 
-import english
+from .. import english
 
 class TestEnglish(unittest.TestCase):
     def setUp(self):

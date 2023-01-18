@@ -3,18 +3,14 @@
 
 A fun little command line utility for [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encryption and decryption.
 
-## Requirements
+## Installation
 
-- [Python 3.11+](https://www.python.org/)
-
-### Python Dependencies
-
-- [pyspellchecker 0.7.1+](https://pypi.org/project/pyspellchecker/)
-
-To automatically install these dependencies, run:
+Clone the repository and install with pip.
 
 ```
-pip install -r requirements.txt
+git clone https://github.com/LilyAsFlora/invicta/
+cd invicta
+pip install .
 ```
 
 ## Usage
@@ -136,12 +132,12 @@ To run a **single test**, run:
 
 Where `<TEST>` is the name of the target test file.
 
-### Example (as of v0.4.0)
+### Example (as of v0.5.0)
 ```
 $ python -m unittest tests/*.py
-.............................
+...............................
 ----------------------------------------------------------------------
-Ran 25 tests in 0.693s
+Ran 27 tests in 0.929s
 
 OK
 ```

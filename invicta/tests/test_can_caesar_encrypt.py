@@ -2,7 +2,7 @@
 
 import unittest
 
-import cipher
+from .. import cipher
 
 class TestCanCaesarEncrypt(unittest.TestCase):
     def test_can_caesar_encrypt_valid_returns_true(self):
