@@ -2,9 +2,7 @@
 
 import argparse
 
-import cipher
-import output
-import _version
+from . import cipher, output, _version
 
 def cipherable(text: str) -> str:
     if not cipher.can_caesar_encrypt(text):
