@@ -3,18 +3,14 @@
 
 A fun little command line utility for [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encryption and decryption.
 
-## Requirements
+## Installation
 
-- [Python 3.11+](https://www.python.org/)
-
-### Python Dependencies
-
-- [pyspellchecker 0.7.1+](https://pypi.org/project/pyspellchecker/)
-
-To automatically install these dependencies, run:
+Clone the repository and install with pip.
 
 ```
-pip install -r requirements.txt
+git clone https://github.com/LilyAsFlora/invicta/
+cd invicta
+pip install .
 ```
 
 ## Usage
