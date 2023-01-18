@@ -2,7 +2,7 @@
 
 import unittest
 
-import cipher
+from .. import cipher
 
 class TestDecrypt(unittest.TestCase):
     def test_caesar_decrypt_word_in_plaintexts(self):
