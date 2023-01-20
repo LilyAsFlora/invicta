@@ -90,6 +90,8 @@ def caesar_decrypt_text(text: str) -> list[str]:
     """
     result = []
 
+    # We only need 1 shift for each letter in the alphabet, as duplicates
+    # will occur after this.
     for i in range(1, ALPHABET_LENGTH):
         result.append(caesar_encrypt_text(text, i))
 
