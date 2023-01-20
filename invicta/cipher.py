@@ -28,25 +28,31 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
 
     Returns:
         str: The resulting ciphertext.
+
+    See the equation described in https://en.wikipedia.org/wiki/Caesar_cipher#Example.
     """
 
-    # Remember whether the input is lower or upper, so we can
-    # return it this way.
-    return_lower = True if char == char.lower() else False
+    # In this algorithm, we will use the following scheme:
+    # A → 0, B → 1, C → 2, ...
 
-    # Convert it to uppercase, as this corresponds with our zero shift.
-    # For instance, 'A' here becomes 0.
-    zero_shifted = ord(char.upper()) - ZERO_SHIFT
+    # Convert the plaintext to uppercase, as this corresponds with our scheme.
+    char_upper = char.upper()
 
-    # Apply the Caesar Cipher formula to find the desired ASCII code,
-    # then convert it back to a character.
-    encrypted_ascii = (zero_shifted + round(shift)) % ALPHABET_LENGTH
-    encrypted_char = chr(encrypted_ascii + ZERO_SHIFT)
+    # Subtract a fixed "zero shift" value from the char's ASCII value, to
+    # enumerate it according to our scheme. For instance, "A" → 0.
+    zero_shifted = ord(char_upper) - ZERO_SHIFT
 
-    if return_lower:
-        return encrypted_char.lower()
-    else:
-        return encrypted_char
+    # Apply the Caesar Cipher formula to find the post-encryption ASCII value.
+    # The modulo operation ensures no overflow occurs (i.e. a value over 26),
+    # and allows a loop-back sort of encryption, such as Z forward to B by 
+    # a shift of +3.
+    zero_shifted_encrypted = (zero_shifted + round(shift)) % ALPHABET_LENGTH
+    char_encrypted = chr(zero_shifted_encrypted + ZERO_SHIFT)
+
+    if char.islower():
+        return char_encrypted.lower()
+
+    return char_encrypted
 
 def caesar_encrypt_text(text: str, shift: int) -> str:
     """
