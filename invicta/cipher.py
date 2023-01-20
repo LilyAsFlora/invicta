@@ -32,6 +32,9 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
     See the equation described in https://en.wikipedia.org/wiki/Caesar_cipher#Example.
     """
 
+    if not can_caesar_encrypt(char):
+        return char
+
     # In this algorithm, we will use the following scheme:
     # A → 0, B → 1, C → 2, ...
 
@@ -69,11 +72,10 @@ def caesar_encrypt_text(text: str, shift: int) -> str:
     """
     result = ""
 
+    # Yes, a map() or list comprehension is appropriate here, but I consider
+    # this more readable.
     for char in text:
-        if char in string.ascii_letters:
-            result += caesar_encrypt_char(char, shift)
-        else:
-            result += char
+        result += caesar_encrypt_char(char, shift)
 
     return result
 
