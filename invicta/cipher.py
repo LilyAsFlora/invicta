@@ -2,7 +2,6 @@
 
 import string
 
-ZERO_SHIFT = 65
 ALPHABET_LENGTH = 26
 
 def can_caesar_encrypt(text: str) -> bool:
@@ -31,6 +30,8 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
 
     See the equation described in https://en.wikipedia.org/wiki/Caesar_cipher#Example.
     """
+
+    ZERO_SHIFT = 65
 
     if not can_caesar_encrypt(char):
         return char
