@@ -9,6 +9,7 @@ from . import cipher, english
 def output_encryption(args: argparse.Namespace) -> None:
     """Handles encryption output for the given arguments."""
     result = cipher.caesar_encrypt_text(args.text, args.shift)
+
     print(result)
 
 def output_decryption(args: argparse.Namespace) -> None:
@@ -20,9 +21,11 @@ def output_decryption(args: argparse.Namespace) -> None:
 
     # -o, --output-shifts
     if args.output_shifts:
-        for index, string in enumerate(plaintexts, 1):
-            plaintexts[index - 1] = \
-                f"{cipher.ALPHABET_LENGTH - index} {-index} {string}"
+        for position, plaintext in enumerate(plaintexts, 1):
+            pos_shift_to_encrypt = cipher.ALPHABET_LENGTH - position
+            neg_shift_to_encrypt = -position
+
+            plaintexts[position - 1] = f"{pos_shift_to_encrypt} {neg_shift_to_encrypt} {plaintext}"
 
     # -e, --english
     if args.english:
