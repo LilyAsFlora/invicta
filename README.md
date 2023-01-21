@@ -42,7 +42,7 @@ invicta encrypt [-h] shift text
 Here, decryption is done with a brute-force approach. If the `--english` flag is not used, the user must interpret the results.
 
 ```
-invicta decrypt [-h] [-o] text
+invicta decrypt [-h] [-o] [-e] text
 ```
 #### Positional Arguments
 `text` — The ciphertext to decrypt. Will output all possible solutions.
