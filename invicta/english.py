@@ -45,6 +45,6 @@ def contains_english(string: str, checker: SpellChecker) -> bool:
         checker: An instance of pyspellchecker.Spellchecker
     """
     words = string.split(" ")
-    words_sanitised = [strip_to_ascii_letters(word.strip()) for word in words]
+    words_ascii_letters_only = [strip_to_ascii_letters(word.strip()) for word in words]
 
-    return any([is_english_word(word, checker) for word in words_sanitised])
+    return any([is_english_word(word, checker) for word in words_ascii_letters_only])
