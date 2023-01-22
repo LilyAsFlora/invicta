@@ -10,7 +10,8 @@ def can_caesar_encrypt(text: str) -> bool:
     Caesar cipher.
 
     Returns `True` if any character in `text` is present in
-    `string.ascii_letters`."""
+    `string.ascii_letters`.
+    """
     for char in text:
         if char in string.ascii_letters:
             return True
@@ -19,8 +20,7 @@ def can_caesar_encrypt(text: str) -> bool:
 
 
 def caesar_encrypt_char(char: str, shift: int) -> str:
-    """
-    Applies case-preserving Caesar cipher to the given character.
+    """Applies case-preserving Caesar cipher to the given character.
 
     Args:
         char (str): A string of length 1.
@@ -63,8 +63,7 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
 
 
 def caesar_encrypt_text(text: str, shift: int) -> str:
-    """
-    Applies Caesar cipher to the given string. Non-ascii characters and case
+    """Applies Caesar cipher to the given string. Non-ascii characters and case
     are preserved.
 
     Args:

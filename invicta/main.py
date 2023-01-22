@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Entry point for Invicta."""
+
 from . import arguments
 
 
@@ -10,3 +12,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
