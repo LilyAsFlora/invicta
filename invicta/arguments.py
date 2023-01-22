@@ -4,6 +4,7 @@ import argparse
 
 from . import cipher, output, _version
 
+
 def cipherable(text: str) -> str:
     if not cipher.can_caesar_encrypt(text):
         raise argparse.ArgumentTypeError(
@@ -11,6 +12,7 @@ def cipherable(text: str) -> str:
         )
 
     return text
+
 
 def process_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -61,3 +63,5 @@ def process_args() -> argparse.Namespace:
     )
 
     return parser.parse_args()
+
+

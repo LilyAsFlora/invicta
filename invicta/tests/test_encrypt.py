@@ -4,6 +4,7 @@ import unittest
 
 from .. import cipher
 
+
 class TestCaesarEncrypt(unittest.TestCase):
     def test_caesar_encrypt_positive_char(self):
         char = "a"
@@ -74,3 +75,5 @@ class TestCaesarEncrypt(unittest.TestCase):
         result = cipher.caesar_encrypt_text(control_str, 1)
 
         self.assertEqual(result, control_str)
+
+

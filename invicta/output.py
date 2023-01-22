@@ -6,11 +6,13 @@ import spellchecker
 
 from . import cipher, english
 
+
 def output_encryption(args: argparse.Namespace) -> None:
     """Handles encryption output for the given arguments."""
     result = cipher.caesar_encrypt_text(args.text, args.shift)
 
     print(result)
+
 
 def output_decryption(args: argparse.Namespace) -> None:
     """Handles decryption output for the given arguments."""
@@ -39,3 +41,5 @@ def output_decryption(args: argparse.Namespace) -> None:
 
     for string in plaintexts:
         print(string)
+
+

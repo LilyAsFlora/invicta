@@ -6,6 +6,7 @@ import spellchecker
 
 from .. import english
 
+
 class TestEnglish(unittest.TestCase):
     def setUp(self):
         self.spell_checker = spellchecker.SpellChecker()
@@ -69,3 +70,5 @@ class TestEnglish(unittest.TestCase):
         result = english.contains_english(mixed_string, self.spell_checker)
 
         self.assertTrue(result)
+
+
