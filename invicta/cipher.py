@@ -4,6 +4,7 @@ import string
 
 ALPHABET_LENGTH = 26
 
+
 def can_caesar_encrypt(text: str) -> bool:
     """Checks whether the given string can be modified with a
     Caesar cipher.
@@ -15,6 +16,7 @@ def can_caesar_encrypt(text: str) -> bool:
             return True
 
     return False
+
 
 def caesar_encrypt_char(char: str, shift: int) -> str:
     """
@@ -59,6 +61,7 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
 
     return char_encrypted
 
+
 def caesar_encrypt_text(text: str, shift: int) -> str:
     """
     Applies Caesar cipher to the given string. Non-ascii characters and case
@@ -81,6 +84,7 @@ def caesar_encrypt_text(text: str, shift: int) -> str:
 
     return result
 
+
 def caesar_decrypt_text(text: str) -> list[str]:
     """Decrypts the given Caesar ciphertext with brute force.
 
@@ -98,3 +102,5 @@ def caesar_decrypt_text(text: str) -> list[str]:
         result.append(caesar_encrypt_text(text, i))
 
     return result
+
+
