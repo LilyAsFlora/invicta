@@ -5,9 +5,10 @@ import string
 ALPHABET_LENGTH = 26
 
 def can_caesar_encrypt(text: str) -> bool:
-    """Checks whether the given string can be modified with a Caesar cipher.
-    
-    Returns `True` if any character in `text` is present in 
+    """Checks whether the given string can be modified with a
+    Caesar cipher.
+
+    Returns `True` if any character in `text` is present in
     `string.ascii_letters`."""
     for char in text:
         if char in string.ascii_letters:
