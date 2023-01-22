@@ -15,6 +15,7 @@ def cipherable(text: str) -> str:
 
 
 def process_args() -> argparse.Namespace:
+    """Process all CLI arguments passed by the user."""
     parser = argparse.ArgumentParser(
         description="Encrypt text with the Caesar cipher."
     )

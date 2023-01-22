@@ -6,8 +6,7 @@ ALPHABET_LENGTH = 26
 
 
 def can_caesar_encrypt(text: str) -> bool:
-    """Checks whether the given string can be modified with a
-    Caesar cipher.
+    """Check whether the given `str` is Caesar-modifiable.
 
     Returns `True` if any character in `text` is present in
     `string.ascii_letters`.
@@ -18,20 +17,19 @@ def can_caesar_encrypt(text: str) -> bool:
 
     return False
 
-
 def caesar_encrypt_char(char: str, shift: int) -> str:
-    """Applies case-preserving Caesar cipher to the given character.
+    """Apply Caesar encryption to a character.
 
-    Args:
+    Keyword arguments:
         char (str): A string of length 1.
-        shift (int): The number of alphabet positions to shift by. This value
-        can be negative, and will be rounded to the nearest 
-        integer.
+        shift (int): The number of alphabet positions to shift by. This
+            value can be negative, and will be rounded to the nearest
+            integer.
 
-    Returns:
-        str: The resulting ciphertext.
+    Returns a `str` containing the resulting ciphertext.
 
-    See the equation described in https://en.wikipedia.org/wiki/Caesar_cipher#Example.
+    See the equation described in
+        https://en.wikipedia.org/wiki/Caesar_cipher#Example.
     """
 
     ZERO_SHIFT = 65
@@ -63,16 +61,14 @@ def caesar_encrypt_char(char: str, shift: int) -> str:
 
 
 def caesar_encrypt_text(text: str, shift: int) -> str:
-    """Applies Caesar cipher to the given string. Non-ascii characters and case
-    are preserved.
+    """Apply Caesar encryption to the given string.
 
-    Args:
+    Keyword arguments.
         text (str): The plaintext to encrypt.
-        shift (int): The number of alphabet positions to shift by. This value
-        can be negative.
+        shift (int): The number of alphabet positions to shift by. This
+        value can be negative.
 
-    Returns:
-        str: The resulting ciphertext.
+    Returns a `str` containing the resulting ciphertext.
     """
     result = ""
 
@@ -85,13 +81,10 @@ def caesar_encrypt_text(text: str, shift: int) -> str:
 
 
 def caesar_decrypt_text(text: str) -> list[str]:
-    """Decrypts the given Caesar ciphertext with brute force.
+    """Decrypt the given Caesar ciphertext.
 
-    Args:
-        text (str): The text to decrypt.
-
-    Returns:
-        list[str]: A list of all possible plaintexts from the given cipher.
+    Returns a `list[str]` containing all possibilities for the original
+        plaintext.
     """
     result = []
 

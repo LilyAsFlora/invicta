@@ -1,4 +1,4 @@
-"""This module contains functions for English checks in Invicta."""
+"""English checks and related utilities."""
 
 import string
 
@@ -6,11 +6,11 @@ from spellchecker import SpellChecker
 
 
 def strip_to_ascii_letters(initial_string: str) -> str:
-    """Removes all non-ASCII-letter characters in a string.
+    """Remove non-ASCII-letter characters from a string.
 
-    More precisely, this function returns a new `str` stripped of any
-    characters that do not occur in `string.ascii_letters`. All whitespace
-    is preserved.
+    Returns a new `str` stripped of any characters that do not occur
+    in `string.ascii_letters`. All whitespace is preserved (as
+    determined by str.issspace()).
     """
     result = ""
 
@@ -22,14 +22,20 @@ def strip_to_ascii_letters(initial_string: str) -> str:
 
 
 def is_english_word(word: str, checker: SpellChecker) -> bool:
-    """Returns `True` if the given word exists in the English dictionary.
-    
-    Note that a 'word' is defined here as a sequence of whitespace-separated 
-    ASCII characters; this includes alphanumerics. Thus, if `word` contains
-    several words, this will return `False`.
-    
-    Args:
-        word: A string to test. 
+    """Check whether a string is an English word.
+
+    Note that a 'word' is defined here as a sequence of
+    whitespace-separated ASCII characters; this includes alphanumerics.
+    Thus, if `word` contains several of such 'words', this will return
+    `False`.
+
+    Understandably, the result of this function can be unpredictable
+    for various inflections. It is therefore advised to call this for
+    the simplest possible form of a word; e.g. singulars over plurals,
+    and infinitives over other conjugations.
+
+    Keyword arguments:
+        word: The string to test.
         checker: An instance of pyspellchecker.Spellchecker
     """
     sanitised_word = word.lower().strip()
@@ -38,13 +44,12 @@ def is_english_word(word: str, checker: SpellChecker) -> bool:
 
 
 def contains_english(string: str, checker: SpellChecker) -> bool:
-    """Returns `True` if the given string contains a word that exists in the
-    English dictionary.
-    
-    See `is_english_word` for the definition of a `word`.
+    """Returns `True` if the given string contains English text.
 
-    Args:
-        word: A string to test. This does not have to be pre-sanitised.
+    See `is_english_word` for the definition of a 'word'.
+
+    Keyword arguments:
+        word: A string to test.
         checker: An instance of pyspellchecker.Spellchecker
     """
     words = string.split(" ")

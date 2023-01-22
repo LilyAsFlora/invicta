@@ -1,4 +1,4 @@
-"""Functions for handling command line output."""
+"""Command line output for Invicta results."""
 
 import argparse
 
@@ -8,14 +8,15 @@ from . import cipher, english
 
 
 def output_encryption(args: argparse.Namespace) -> None:
-    """Handles encryption output for the given arguments."""
+    """Display output for encryption of the given arguments."""
     result = cipher.caesar_encrypt_text(args.text, args.shift)
 
     print(result)
 
 
+# TODO: Find a way to apply polymorphism here.
 def output_decryption(args: argparse.Namespace) -> None:
-    """Handles decryption output for the given arguments."""
+    """Display output for decryption of the given arguments."""
     if not cipher.can_caesar_encrypt(args.text):
         return
 
