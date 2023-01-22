@@ -4,6 +4,7 @@ import unittest
 
 from .. import cipher
 
+
 class TestCanCaesarEncrypt(unittest.TestCase):
     def test_can_caesar_encrypt_valid_returns_true(self):
         valid_plaintext = "Hello, world"
@@ -34,3 +35,5 @@ class TestCanCaesarEncrypt(unittest.TestCase):
         result = cipher.can_caesar_encrypt(mixed_str)
 
         self.assertTrue(result)
+
+

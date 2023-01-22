@@ -4,6 +4,7 @@ import unittest
 
 from .. import cipher
 
+
 class TestDecrypt(unittest.TestCase):
     def test_caesar_decrypt_word_in_plaintexts(self):
         plaintext = "a"
@@ -17,3 +18,5 @@ class TestDecrypt(unittest.TestCase):
         encrypted = cipher.caesar_encrypt_text(plaintext, 1)
 
         self.assertIn(plaintext, cipher.caesar_decrypt_text(encrypted))
+
+

@@ -4,6 +4,7 @@ import string
 
 from spellchecker import SpellChecker
 
+
 def strip_to_ascii_letters(initial_string: str) -> str:
     """Removes all non-ASCII-letter characters in a string.
 
@@ -18,6 +19,7 @@ def strip_to_ascii_letters(initial_string: str) -> str:
             result += char
 
     return result
+
 
 def is_english_word(word: str, checker: SpellChecker) -> bool:
     """Returns `True` if the given word exists in the English dictionary.
@@ -34,6 +36,7 @@ def is_english_word(word: str, checker: SpellChecker) -> bool:
 
     return sanitised_word in checker.known([sanitised_word])
 
+
 def contains_english(string: str, checker: SpellChecker) -> bool:
     """Returns `True` if the given string contains a word that exists in the
     English dictionary.
@@ -48,3 +51,5 @@ def contains_english(string: str, checker: SpellChecker) -> bool:
     words_ascii_letters_only = [strip_to_ascii_letters(word.strip()) for word in words]
 
     return any([is_english_word(word, checker) for word in words_ascii_letters_only])
+
+
