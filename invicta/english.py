@@ -38,7 +38,7 @@ def is_english_word(word: str, checker: SpellChecker) -> bool:
         word: The string to test.
         checker: An instance of pyspellchecker.Spellchecker
     """
-    sanitised_word = word.lower().strip()
+    sanitised_word = word.casefold().strip()
 
     return sanitised_word in checker.known([sanitised_word])
 
